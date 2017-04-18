@@ -1,0 +1,61 @@
+{
+  "name": "vue-template-boilerplate",
+  "version": "1.0.0",
+  "description": "vue-template-boilerplate",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc",
+    "test": "test"
+  },
+  "dependencies": {
+    "autoprefixer": "^6.7.7",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "vue": "^2.2.6",
+    "webpack": "^2.4.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "cross-env": "^4.0.0",
+    "css-loader": "^0.28.0",
+    "eventsource-polyfill": "^0.9.6",
+    "express": "^4.15.2",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "html-webpack-plugin": "^2.28.0",
+    "opn": "^4.0.2",
+    "rimraf": "^2.6.1",
+    "url-loader": "^0.5.8",
+    "vue-loader": "^11.3.4",
+    "vue-template-compiler": "^2.2.6",
+    "webpack": "^2.4.1",
+    "webpack-dev-middleware": "^1.10.1",
+    "webpack-hot-middleware": "^2.18.0",
+    "webpack-merge": "^4.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArthurFree/vue-template-boilerplate.git"
+  },
+  "keywords": [
+    "vue",
+    "template",
+    "boilerplate"
+  ],
+  "author": "ArthurFree",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ArthurFree/vue-template-boilerplate/issues"
+  },
+  "homepage": "https://github.com/ArthurFree/vue-template-boilerplate#readme"
+}
