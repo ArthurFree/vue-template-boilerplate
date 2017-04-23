@@ -12,7 +12,15 @@ var packageConfig = require('../package.json')
 // https://www.npmjs.com/package/shelljs
 var shell = require('shelljs')
 
-function versionRequirements = [
+// 执行cmd命令
+function exec(cmd) {
+    return require('child_process').execSync(cmd).toString().trim()
+}
+
+/**
+ * 需要验证版本的模块
+ */
+var versionRequirements = [
     {
         name: 'node',
         currentVersion: semver.clean(process.version),
@@ -22,7 +30,7 @@ function versionRequirements = [
 
 if (shell.which('npm')) {
     versionRequirements.push({
-        nap: 'npm',
+        name: 'npm',
         currentVersion: exec('npm --version'),
         versionRequirement: packageConfig.engines.npm
     })
@@ -34,7 +42,7 @@ module.exports = function () {
         var mod = versionRequirements[i];
         if (!semver.satisfies(mod.currentVersion, mod.versionRequirement)) {
             warnings.push(mod.name + ': ' +
-                chalk.red(mod.currentVersion) + ' should be ' +
+                chalk.red(mod.currentVersion) + ' 应该是 ' +
                 chalk.green(mod.versionRequirement)
             )
         }
@@ -42,7 +50,8 @@ module.exports = function () {
 
     if (warnings.length) {
         console.log('');
-        console.log(chlk.yellow('To use this template, you must update following to modules:'));
+        // console.log(chalk.yellow('To use this template, you must update following to modules:'));
+        console.log(chalk('为了能正常使用，您必须更新以下模块：'))
         console.log();
         for (var i = 0;i < warnings.length;i++) {
             var warning = warning[i]
@@ -50,5 +59,7 @@ module.exports = function () {
         }
         console.log()
         process.exit(1)
+    } else {
+        console.log(chalk.green("版本正常可使用."))
     }
 }
