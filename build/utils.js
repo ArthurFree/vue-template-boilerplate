@@ -23,8 +23,8 @@ exports.cssLoaders = function (options) {
     // generate loader string to be used with extract text plugin
     function generateLoaders(loader, loaderOptions) {
         var loaders = [cssLoader]
-        if (laoder) {
-            loiaders.push({
+        if (loader) {
+            loaders.push({
                 loader: loader + '-loader',
                 options: Object.assign({}, loaderOptions, {
                     sourceMap: options.sourceMap
