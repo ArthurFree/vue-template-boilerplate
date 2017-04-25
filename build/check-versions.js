@@ -1,3 +1,7 @@
+/**
+ * 检查版本工程项目依赖版本
+ */
+
 // Terminal string styling
 // https://www.npmjs.com/package/chalk
 var chalk = require('chalk')

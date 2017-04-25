@@ -13,3 +13,7 @@
 //     spinner.color = 'yellow';
 //     spinner.text = 'Loading rainbows'
 // }, 1000)
+
+//------- 测试shelljs
+// var shell = require('shelljs')
+// console.log("shell.which", shell.which('npm'));
