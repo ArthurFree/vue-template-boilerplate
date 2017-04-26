@@ -24,6 +24,7 @@
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^4.0.0",
     "css-loader": "^0.28.0",
+    "eslint": "^3.19.0",
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.15.2",
     "extract-text-webpack-plugin": "^2.1.0",
