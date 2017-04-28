@@ -60,17 +60,6 @@ const tools = {
     */
     dialogCount: 0,
     /**
-    * 第三方sdk地址
-    * @type {Number}
-    */
-    sdk: {
-        //腾讯直播播放器sdk（api:http://video.qcloud.com/download/docs/QLIVE_Player_Web_SDK_Developer_Guide.pdf）
-        volPlayer: "http://qzonestyle.gtimg.cn/open/qcloud/video/live/h5/live_connect.js",
-        //腾讯点播播放器sdk（api:http://video.qcloud.com/download/docs/QVOD_Player_Web_SDK_Developer_Guide.pdf）
-        vodPlayer: "http://qzonestyle.gtimg.cn/open/qcloud/video/h5/h5connect.js",
-        uploader: "http://qzonestyle.gtimg.cn/open/qcloud/js/vod/sdk/uploaderh5.js"
-    },
-    /**
     * 图表色板
     * @type {Array<String>}
     */
@@ -81,7 +70,6 @@ const tools = {
     * @type {String}
     */
     urlContent(url) {
-        //return "http://emkt.sfaessentials.com/aj" + url;
         return "http://123.56.178.15/aj" + url;
     },
     /**
@@ -106,7 +94,7 @@ const tools = {
     // },
 
     javaApi(url) {
-        return `http://10.90.0.15:19000${url}`;
+        return url;
     },
 
     /**
@@ -160,34 +148,6 @@ const tools = {
         this.loadingCount = 1;
         this.hideLoading();
     },
-    // 备用
-    // showDialog: (function (tools) {
-    //     console.log('tools',tools)
-    //     // if (this.dialogCount <= 0) {
-    //     let mode = {
-    //         success: { title: "成功" },
-    //         error: { title: "失败" },
-    //         info: { title: "信息" },
-    //         confirm: { title: "确认" },
-    //         window: { title: "" }
-    //     };
-    //     let returnModal = {};
-    //     $.map(mode, function (val, key) {
-    //         returnModal[key] = function (content, okCb, cfg) {
-    //             let _cfg = $.extend(true, {
-    //                 visible: true,
-    //                 title: val.title,
-    //                 content: content,
-    //                 onOk: typeof okCb === "function" ? okCb : $.noop,
-    //                 onCancel: $.noop
-    //             }, cfg);
-    //             Modal[key](_cfg);
-    //         };
-    //     });
-    //     return returnModal;
-    //     // }
-    //     // this.dialogCount++;
-    // } (this)),
     /**
      * 删除所有dialog
      * @return {[type]}
