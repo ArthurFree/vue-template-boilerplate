@@ -10,5 +10,9 @@ module.exports = {
     "extends": "airbnb-base",
     "plugins": [
         "import"
-    ]
+    ],
+    rules: {
+        // 缩进
+        "indent": ["error", 4]
+    }
 };
