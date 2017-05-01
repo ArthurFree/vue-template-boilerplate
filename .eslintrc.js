@@ -7,7 +7,7 @@ module.exports = {
     env: {
         browser: true
     },
-    "extends": "airbnb-base",
+    "extends": ["airbnb-base", "plugin:flowtype/recommended"],
     "plugins": [
         "import",
         "flowtype"
@@ -17,7 +17,6 @@ module.exports = {
         "indent": ["error", 4],
         // no-tabs
         "no-tabs": "off",
-        
         // no-plusplus 一元操作符会自动添加分号，不同的空白会改变源代码的含义
         "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
         // no-console

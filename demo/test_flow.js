@@ -1,12 +1,9 @@
-// function test(name: string):void {
-//     console.log('hello, ', name);
-// }
+// @flow
 
-// export default test;
+const word: string = '123123';
 
-
-function test(name) {
-    console.log(`Hello, ${name}`);
+function test(name: string) {
+    console.log(`Hello, ${name}, ${word}`);
 }
 
 export default test;

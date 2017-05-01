@@ -76,4 +76,6 @@ Cross platform setting of environment scripts. (跨平台环境配置脚本)
 ### babel-register
 
 
-## 
+## webpack 检查error
+
+> webpack --display-error-details
