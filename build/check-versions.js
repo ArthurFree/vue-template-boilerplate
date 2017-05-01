@@ -68,6 +68,6 @@ module.exports = function () {
         console.log();
         process.exit(1);
     } else {
-        console.log(chalk.green("版本正常可使用."));
+        console.log(chalk.green('版本正常可使用.'));
     }
 };
