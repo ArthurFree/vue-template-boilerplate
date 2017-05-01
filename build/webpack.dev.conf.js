@@ -1,10 +1,10 @@
-var utils = require('./utils')
-var webpack = require('webpack')
-var config = require('../config')
-var merge = require('webpack-merge')
-var baseWebpackConfig = require('./webpack.base.conf')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var FriendlyErrorPlugin = require('friendly-errors-webpack-plugin')
+const utils = require('./utils');
+const webpack = require('webpack');
+const config = require('../config');
+const merge = require('webpack-merge');
+const baseWebpackConfig = require('./webpack.base.conf');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FriendlyErrorPlugin = require('friendly-errors-webpack-plugin');
 
 // add hot-reload related code to entery chunks
 Object.keys(baseWebpackConfig.entry).forEach(function (name) {
