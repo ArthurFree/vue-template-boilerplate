@@ -48,11 +48,9 @@ module.exports = function () {
     for (let i = 0; i < versionRequirements.length; i++) {
         const mod = versionRequirements[i];
         if (!semver.satisfies(mod.currentVersion, mod.versionRequirement)) {
-            warnings.push(
-                `${mod.name}: 
+            warnings.push(`${mod.name}: 
                 ${chalk.red(mod.currentVersion)} 应该是 
-                ${chalk.green(mod.versionRequirement)}`,
-            );
+                ${chalk.green(mod.versionRequirement)}`);
         }
     }
 
