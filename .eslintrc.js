@@ -9,7 +9,8 @@ module.exports = {
     },
     "extends": "airbnb-base",
     "plugins": [
-        "import"
+        "import",
+        "flowtype"
     ],
     rules: {
         // 缩进
@@ -18,6 +19,8 @@ module.exports = {
         "no-tabs": "off",
         // import/prefer-default-export
         "import/prefer-default-export": "off",
+        // import/no-extraneous-dependencies
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
         // no-plusplus 一元操作符会自动添加分号，不同的空白会改变源代码的含义
         "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
     }
