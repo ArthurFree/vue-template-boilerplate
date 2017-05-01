@@ -60,14 +60,21 @@ exports.cssLoaders = function (options) {
 exports.styleLoaders = function styleLoaders(options) {
     const output = [];
     const loaders = exports.cssLoaders(options);
-    for (const extension in loaders) {
-        if ({}.hasOwnProperty.call(loaders, extension)) {
-            const loader = loaders[extension];
-            output.push({
-                test: new RegExp(`\\.${extension}$`),
-                use: loader,
-            });
-        }
-    }
+    // for (const extension in loaders) {
+    //     if ({}.hasOwnProperty.call(loaders, extension)) {
+    //         const loader = loaders[extension];
+    //         output.push({
+    //             test: new RegExp(`\\.${extension}$`),
+    //             use: loader,
+    //         });
+    //     }
+    // }
+    Object.keys(loaders).forEach((item) => {
+        const loader = loaders[item];
+        output.push({
+            test: new RegExp(`\\.${item}$`),
+            use: loader,
+        });
+    });
     return output;
 };
