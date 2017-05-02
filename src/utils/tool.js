@@ -71,7 +71,9 @@ const tools = {
     //         rsPort = port.replace(/<%=(\d+)>/, "$1") || "19000";
     //     }
     //     if (host) {
-    //         rsHost = host.replace(/<%=(([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6})>|<%=((?:[0-9]{1,3}\.){3}[0-9]{1,3})>/, "$4") || "10.90.0.15";
+    //         rsHost = host.replace(/<%=(([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)
+    //                 +[a-zA-Z]{2,6})>|<%=((?:[0-9]{1,3}\.){3}[0-9]{1,3})>/, "$4")
+    //                 || "10.90.0.15";
     //     }
     //     return `http://${rsHost}:${rsPort}${url}`;
     // },
@@ -131,6 +133,7 @@ const tools = {
         }
         const sep = 3;
         const numToStr = Number(num).toString();
+        /* eslint consistent-return: "off" */
         if (numToStr.length <= sep) return numToStr;
         const surplusLength = numToStr.length % sep;
         const surplus = [numToStr.substring(0, surplusLength)];
@@ -141,6 +144,11 @@ const tools = {
     * return {obj}
     */
     getCookies: () => {
+        /* eslint no-underscore-dangle: "off" */
+        function _decodeLoop(str) {
+            const res = decodeURIComponent(str);
+            return res === str ? str : _decodeLoop(res);
+        }
         const cookies = {};
         document.cookie.replace(/([^=;]+)=([^=;]*)/g, (word, $1, $2) => {
             const key = _decodeLoop($1.trim());
@@ -148,17 +156,13 @@ const tools = {
             cookies[key] = val;
         });
         return cookies;
-        function _decodeLoop(str) {
-            const res = decodeURIComponent(str);
-            return res === str ? str : _decodeLoop(res);
-        }
     },
     /**
     * 获取当前域下所有cookie，decode并返回
     * return {obj}
     */
     setCookie: (key, value, exdays) => {
-        const d = new hDate();
+        const d = new Date();
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
         const expires = `expires=${d.toUTCString()}`;
         document.cookie += `${key}=${value}; ${expires}`;

@@ -1,3 +1,5 @@
-// import test from '../demo/test_flow';
+// @flow
 
-// test('lvcheng');
+import test from './component/test';
+
+test('LvCheng');
