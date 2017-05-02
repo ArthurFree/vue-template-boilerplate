@@ -1,10 +1,10 @@
 {
     "presets": [
         "flow",
-        // ["env", { "modules": false }],
+        ["env", { "modules": false }],
         "stage-2"
     ],
-    "plugins": ["transform-runtime"],
+    "plugins": ["transform-runtime", "syntax-flow"],
     "comments": false,
     "env": {
         "test": {

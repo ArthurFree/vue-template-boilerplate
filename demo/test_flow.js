@@ -1,9 +1,5 @@
 // @flow
 
-const word: string = '123123';
-
-function test(name: string) {
-    console.log(`Hello, ${name}, ${word}`);
+export default function test(name: string): void {
+    console.log(`Hello, ${name}, Welcome to Learn vue!!!`);
 }
-
-export default test;
