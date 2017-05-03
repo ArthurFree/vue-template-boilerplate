@@ -6,14 +6,10 @@ const baseWebpackConfig = require('./webpack.base.conf');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorPlugin = require('friendly-errors-webpack-plugin');
 
-console.log('--- dev webpack config ---');
-
 // add hot-reload related code to entery chunks
 Object.keys(baseWebpackConfig.entry).forEach((name) => {
     baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name]);
 });
-
-console.log('--- baseWebpackConfig ---', baseWebpackConfig.entry);
 
 module.exports = merge(baseWebpackConfig, {
     module: {
