@@ -6,8 +6,6 @@ if (!process.env.NODE_ENV) {
     process.env.NODE_ENV = JSON.stringify(config.dev.env.NODE_ENV);
 }
 
-console.log('--- env ---', process.env.NODE_ENV);
-
 const opn = require('opn');
 const path = require('path');
 const express = require('express');

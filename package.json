@@ -8,7 +8,9 @@
     "test": "test"
   },
   "dependencies": {
-    "vue": "^2.3.0"
+    "vue": "^2.3.0",
+    "vue-router": "^2.5.3",
+    "vuex": "^2.3.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.7",
