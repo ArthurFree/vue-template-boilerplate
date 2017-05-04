@@ -23,6 +23,8 @@ module.exports = {
         "no-console": process.env.NODE_ENV === 'production' ? 2 : 0,
         // no-debugger, allow debugger during development
         "no-debugger": process.env.NODE_ENV === 'prroduction' ? 2 : 0,
+        // no-unused-vars
+        "no-unused-vars": "warn",
         // import/prefer-default-export
         "import/prefer-default-export": "off",
         // import/no-extraneous-dependencies
