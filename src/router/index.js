@@ -1,5 +1,5 @@
 /* eslint global-require: 'off' */
-const routers = [
+const routes = [
     {
         path: '/',
         name: 'home',
@@ -20,4 +20,4 @@ const routers = [
     },
 ];
 
-export default routers;
+export default routes;

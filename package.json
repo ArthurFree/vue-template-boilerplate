@@ -8,7 +8,7 @@
     "test": "test"
   },
   "dependencies": {
-    "vue": "^2.3.0",
+    "vue": "^2.3.2",
     "vue-router": "^2.5.3",
     "vuex": "^2.3.1"
   },
@@ -35,6 +35,7 @@
     "eslint-import-resolver-webpack": "^0.8.1",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-flowtype": "^2.32.1",
+    "eslint-plugin-html": "^2.0.3",
     "eslint-plugin-import": "^2.2.0",
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.15.2",

@@ -10,7 +10,8 @@ module.exports = {
     "extends": ["airbnb-base", "plugin:flowtype/recommended"],
     "plugins": [
         "import",
-        "flowtype"
+        "flowtype",
+        "html"
     ],
     rules: {
         // 缩进
