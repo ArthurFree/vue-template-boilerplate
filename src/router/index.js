@@ -1,7 +1,7 @@
 /* eslint global-require: 'off' */
 const routes = [
     {
-        path: '/',
+        path: '/home',
         name: 'home',
         component: (resolve) => {
             require.ensure(['../views/index.vue'], () => {
