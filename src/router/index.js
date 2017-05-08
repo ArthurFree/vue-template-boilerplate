@@ -1,23 +1,13 @@
-/* eslint global-require: 'off' */
-const routes = [
-    {
-        path: '/home',
-        name: 'home',
-        component: (resolve) => {
-            require.ensure(['../views/index.vue'], () => {
-                resolve(require('../views/index.vue'));
-            });
-        },
-    },
-    {
-        path: '/list',
-        name: 'list',
-        component: (resolve) => {
-            require.ensure(['../views/list.vue'], () => {
-                resolve(require('../views/list.vue'));
-            });
-        },
-    },
-];
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import routes from './routes';
 
-export default routes;
+Vue.use(VueRouter);
+
+export function createRouter() {
+    return new VueRouter({
+        mode: 'history',
+        scrollBehavior: () => ({ y: 0 }),
+        routes,
+    });
+}

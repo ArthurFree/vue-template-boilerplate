@@ -12,6 +12,7 @@ Object.keys(baseWebpackConfig.entry).forEach((name) => {
 });
 
 // https://github.com/webpack/loader-utils/issues/56
+// use to find out which loader is causing deprecation warning
 // process.traceDeprecation = true;
 
 module.exports = merge(baseWebpackConfig, {
