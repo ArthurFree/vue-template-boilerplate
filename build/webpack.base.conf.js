@@ -8,6 +8,10 @@ function resolve(dir) {
     return path.join(__dirname, '..', dir);
 }
 
+// remove warning
+// see: https://github.com/vuejs/vue-loader/issues/666
+process.noDeprecation = true;
+
 module.exports = {
     entry: {
         app: './src/main.js',
