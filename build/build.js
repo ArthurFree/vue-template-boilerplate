@@ -21,7 +21,7 @@ const config = require('../config');
 
 const webpackConfig = require('./webpack.prod.conf');
 
-const spinner = ora('building for prroduction...');
+const spinner = ora('building for production...');
 spinner.start();
 
 rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), (error) => {
@@ -39,7 +39,7 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), (error) 
         console.log(chalk.cyan('   Build complete.\n'));
         console.log(chalk.yellow(
             '   Tip: built files are meant to be served over an HTTP server.\n' +
-            '   Opeaning index.html over file:// worn\'t work.\n',
+            '   Opeaning index.html over file:// worn\'t work.\n'
         ));
     });
 });

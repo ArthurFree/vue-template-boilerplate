@@ -66,9 +66,11 @@
   "scripts": {
     "clean": "rimraf dist",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node build/dev-server.js",
     "flow": "flow check",
-    "check:error": "webpack --colors --config build/webpack.dev.conf.js --display-error-details"
+    "dev": "node build/dev-server.js",
+    "dev:error": "webpack --colors --config build/webpack.dev.conf.js --display-error-details",
+    "build": "node build/build.js",
+    "build:check": "webpack --colors --config build/webpack.prod.conf.js --display-error-details"
   },
   "engines": {
     "node": ">= 4.0.0",
