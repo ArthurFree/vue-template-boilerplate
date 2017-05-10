@@ -50,13 +50,6 @@ module.exports = {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 include: [resolve('src'), resolve('test')],
-                options: {
-                    presets: [
-                        'flow',
-                        ['env', { modules: false }],
-                        'stage-2',
-                    ],
-                },
             },
             {
                 test: /.(png|jpe?g|gif|svg)(\?.*)?$/,
