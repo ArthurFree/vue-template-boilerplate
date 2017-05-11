@@ -2,6 +2,7 @@
 /* eslint no-new: "off" */
 
 import Vue from 'vue';
+import { sync } from 'vuex-router-sync';
 import App from './App.vue';
 import { createRouter } from './router';
 import { createStore } from './vuex/index';
@@ -11,6 +12,8 @@ test('LvCheng');
 
 const store = createStore();
 const router = createRouter();
+
+sync(store, router);
 
 new Vue({
     el: '#app',
