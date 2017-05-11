@@ -69,7 +69,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "flow": "flow check",
     "dev": "node build/dev-server.js",
-    "dev:error": "webpack --colors --config build/webpack.dev.conf.js --display-error-details",
+    "dev:check": "webpack --colors --config build/webpack.dev.conf.js --display-error-details",
     "build": "node build/build.js",
     "build:check": "webpack --colors --config build/webpack.prod.conf.js --display-error-details"
   },
