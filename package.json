@@ -8,6 +8,7 @@
     "test": "test"
   },
   "dependencies": {
+    "axios": "^0.16.1",
     "vue": "^2.3.2",
     "vue-router": "^2.5.3",
     "vuex": "^2.3.1",
