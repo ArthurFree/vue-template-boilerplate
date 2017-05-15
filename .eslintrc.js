@@ -26,6 +26,8 @@ module.exports = {
         "no-debugger": process.env.NODE_ENV === 'prroduction' ? 2 : 0,
         // no-unused-vars
         "no-unused-vars": "warn",
+        // no-underscore-dangle 是否允许悬空下划线出现在标识符中
+        "no-underscore-dangle": 'off',
         // import/prefer-default-export
         "import/prefer-default-export": "off",
         // import/no-extraneous-dependencies
