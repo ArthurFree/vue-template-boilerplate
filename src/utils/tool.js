@@ -2,7 +2,22 @@
 import axios from 'axios';
 
 const tools = {
+    /**
+     * 接口基本地址
+    */
     baseURL: 'https://cnodejs.org/api/v1',
+    /**
+     * 使用axios封装ajax
+     * 【调用方法】：tools.ajax({})
+     * 【配置参数】：
+     *      - url: 接口访问具体地址
+     *      - method: 接口请求类型(get/post)
+     *      - params: 接口所需的参数
+     *      - commit: vuex中的commit函数
+     *      - mutationType: vuex中的mutation标识符
+     *      - info: 请求信息，用于错误/正确信息提示（格式：[动词]+[操作项], 如，获取文章列表）
+     *      - isShowSuccess: 操作成功时，是否显示success提示框，默认为false
+    */
     ajax: (function () {
         function _axios(cfg) {
 
