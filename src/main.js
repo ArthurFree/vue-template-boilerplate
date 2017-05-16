@@ -7,7 +7,7 @@ import App from './App.vue';
 import { createRouter } from './router';
 import { createStore } from './vuex/index';
 import test from './component/test';
-import tools from './utils/tool';
+import { tools } from './utils';
 
 test('LvCheng');
 
