@@ -13,6 +13,13 @@ module.exports = {
         "flowtype",
         "html"
     ],
+    'settings': {
+        'import/resolver': {
+            'webpack': {
+                'config': 'build/webpack.base.conf.js',
+            },
+        },
+    },
     rules: {
         // 缩进
         "indent": ["error", 4],

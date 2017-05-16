@@ -28,6 +28,8 @@ module.exports = {
         alias: {
             vue$: 'vue/dist/vue.esm.js',
             '@': resolve('src'),
+            'utils': resolve('src/utils'),
+            'mutationType': resolve('src/vuex/mutation-types'),
         },
     },
     module: {

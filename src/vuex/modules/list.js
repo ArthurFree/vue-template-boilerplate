@@ -3,7 +3,7 @@
 
 import {
     GET_LIST,
-} from '../mutation-types';
+} from 'mutationType';
 
 // initial state
 const state = {

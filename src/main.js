@@ -3,11 +3,11 @@
 
 import Vue from 'vue';
 import { sync } from 'vuex-router-sync';
+import { tools } from 'utils';
 import App from './App.vue';
 import { createRouter } from './router';
 import { createStore } from './vuex/index';
-import test from './component/test';
-import { tools } from './utils';
+import test from './components/test';
 
 test('LvCheng');
 
