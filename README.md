@@ -3,6 +3,8 @@ vue-template-boilerplate
 
 ## TODO
 
+- [ ] flex封装
+- [ ] 移动端适配
 - [ ] 封装dialog弹窗组件
 - [ ] 增加Loading动画
 - [ ] 将弹窗/Loading动画和ajax结合到一起
