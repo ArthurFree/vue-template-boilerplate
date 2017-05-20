@@ -1,5 +1,7 @@
 # flexbox
 
+## flex知识点
+
 Flex容器 - 元素设置了`display: flex/inline-flex`
 
 Flex项目 - Flex容器的子元素
@@ -59,6 +61,38 @@ flex速记：
 
     -   绝对Flex项目的宽度只基于 flex 属性，而相对Flex项目的宽度基于内容大小。
 
+## 使用flex实现终端适配
+
+### 基本概念
+
+***视窗(viewport)*** - 严格等于浏览器的窗口，移动端的viewport太窄，提供了两个viewport虚拟的`viewportvisualviewport` 和 布局的 `viewportlayoutviewport`
+
+***物理像素(physical pixel)*** - 又被称为设备像素，显示设备上的一个最微小的物理部件，每个像素可以根据操作系统设置自己的颜色和亮度。
+
+***设备独立像素(density-independent pixel)*** - 也称密度无关像素，可以认为计算机坐标中的一个点，代表一个可以由程序使用的虚拟像素(比如CSS像素)，然后由相关系统转换为物理像素
+
+***CSS像素*** - 是一个抽象的单位，称为与设备无关的像素(device-independent pixel)，简称DIPs
+
+***屏幕密度*** - 指一个设备表面上存在的像素数量，通常以每英寸有多少像素来计算(PPi)
+
+***设备像素比(device pixel ratio)*** - 简称dpr，定义了物理像素和设备独立像素的对应关系
+```
+设备像素比 ＝ 物理像素 / 设备独立像素
+```
+
+### <meta>
+
+以显示网页的屏幕宽度定义了视窗宽度
+```
+<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
+```
+
+### rem
+
+rem相对于根元素<html>的font-size来做计算
+
+
+在js中，通过`window.devicePixelRatio`获取到当前设备的dpr。在CSS中，可以通过-webkit-device-pixel-ratio，-webkit-min-device-pixel-ratio和 -webkit-max-device-pixel-ratio进行媒体查询，对不同dpr的设备，做一些样式适配(这里只针对webkit内核的浏览器和webview)
 
 ## 参考
 
