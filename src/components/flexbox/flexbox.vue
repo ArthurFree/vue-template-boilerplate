@@ -9,18 +9,18 @@ export default {
     props: {
         gutter: {
             type: Number,
-            default: 8
+            default: 8,
         },
         direction: {
             type: String,
-            default: 'horizontal'
+            default: 'horizontal',
         },
         justify: String,
         align: String,
         wrap: String,
         class: String,
     },
-    computed: () {
+    computed: {
         styles() {
             const styles = {
                 'justify-content': this.justify,
@@ -36,10 +36,10 @@ export default {
             return styles;
         },
         className() {
-            return this.class
-        }
-    }
-}
+            return this.class;
+        },
+    },
+};
 </script>
 
 <style>
