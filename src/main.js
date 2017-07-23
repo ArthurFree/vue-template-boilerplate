@@ -16,14 +16,25 @@ const router = createRouter();
 
 sync(store, router);
 
-tools.ajax({
+tools.fetch({
     url: 'topics',
-    params: {
-        page: 1,
-        limit: 50,
-        tab: 'good',
-        mdrender: 'true',
-    },
+    method: 'post',
+    data: [
+        {
+            id: '1',
+            name: '1',
+        },
+        {
+            id: '2',
+            name: '2',
+        },
+    ],
+    // params: {
+    //     page: 1,
+    //     limit: 50,
+    //     tab: 'good',
+    //     mdrender: 'true',
+    // },
     info: '获取主题首页',
     isShowSuccess: true,
 });

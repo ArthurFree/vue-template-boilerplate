@@ -110,6 +110,106 @@ const tools = {
 
         return _axios;
     }()),
+    /**
+     *
+     */
+    fetch: function (cfg) {
+        const axiosInstance = axios.create({
+            url: '',
+            method: 'get',
+            baseURL: this.baseURL,
+            params: null,
+            responseType: 'json'
+        });
+
+        function triggerSuccess(response) {
+            // tools.hideLoading()
+            if (cfg.isShowSuccess === true) {
+                // show dialog
+            }
+
+            if (cfg.dispatch !== null) {
+                cfg.dispatch({
+                    type: cfg.actionType,
+                    data: response.data
+                });
+            }
+        }
+
+        function triggerError(msg, response) {
+            msg =  msg || (response.data === null ? '网络请求错误' : (response.data.msg) || '无');
+            if (config.dispatch !== null && response.config.dispatch == 'function') {
+                config.dispatch({
+                    type: '',
+                });
+            }
+        }
+
+        function _onSuccess(response) {
+            const config = reponse.config;
+            const isSuccess = response.data.success;
+            const errMsg = '';
+            let isTriggerSuccess = false;
+
+            if (response.data.code === 10000) {
+                // 服务器返回成功
+                isTriggerSuccess = true;
+            } else if (response.code === 10010) {
+                // 已授权过
+                // 全局不做任何处理
+                isTriggerSuccess = true;
+            } else {
+                if (response.code === 10001
+                    || response.code === 10004
+                    || response.code === 80001
+                    || response.code === 80002
+                    || response.code === 60002
+                ) {
+                    // 常规错误无需处理
+                } else if (response.code === 10002) {
+                    // 登录失效
+                    // dialog 请您登陆
+                } else if (response.code === 10003) {
+                    // 未通过审核
+                } else if (response.code === 11001 || response.code === 11002) {
+                    // 登陆失败
+                } else if (response.code === 11003) {
+                    // 权限不足
+                } else if (response.code === 12001) {
+                    // 功能开关改变
+                } else {
+                    // 未记录的code
+                }
+
+                isTriggerSuccess = false;
+            }
+
+            isTriggerSuccess ? triggerSuccess(response) : triggerError(response.data.error_msg, response);
+        }
+
+        function _onError(error) {
+            triggerError('网络请求失败', error.response);
+        }
+
+        axiosInstance.interceptors.request.use((config) => {
+            console.log('--- 请求前 ----');
+            return config;
+        }, (error) => {
+            _onError(err);
+            return Promise.reject(error);
+        });
+
+        axiosInstance.interceptors.response.use((response) => {
+            console.log('--- 成功收到请求后 -----');
+            _onSuccess(response);
+            return reponse;
+        }, (error) => {
+            _onError(error);
+            return Promise.reject(error);
+        });
+
+        return axiosInstance.request(cfg);
+    }
 };
 
 export default tools;
